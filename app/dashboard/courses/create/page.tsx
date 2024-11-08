@@ -1,5 +1,4 @@
-import Form from '@/app/dashboard/courses/_components/create-form';
-import Breadcrumbs from '@/app/dashboard/courses/_components/breadcrumbs';
+import Form from './create-form';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -8,18 +7,6 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   return (
-    <main>
-      <Breadcrumbs
-        breadcrumbs={[
-          { label: 'courses', href: '/dashboard/courses' },
-          {
-            label: 'Create Course',
-            href: '/dashboard/courses/create',
-            active: true,
-          },
-        ]}
-      />
-      <Form />
-    </main>
+    <Form />
   );
 }

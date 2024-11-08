@@ -1,6 +1,5 @@
-import Form from '@/app/dashboard/courses/_components/edit-form';
-import Breadcrumbs from '@/app/dashboard/courses/_components/breadcrumbs';
-import { fetchCourseById } from '@/app/lib/data';
+import EditCourseForm from './edit-form'
+import { fetchCourseById } from '@/app/lib/course-actions';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
@@ -20,18 +19,6 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
   }
 
   return (
-    <main>
-      <Breadcrumbs
-        breadcrumbs={[
-          { label: 'courses', href: '/dashboard/courses' },
-          {
-            label: 'Edit course',
-            href: `/dashboard/courses/${id}/edit`,
-            active: true,
-          },
-        ]}
-      />
-      <Form course={course} />
-    </main>
+    <EditCourseForm course={course} />
   );
 }

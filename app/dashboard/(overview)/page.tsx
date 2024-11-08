@@ -1,32 +1,40 @@
-import CardWrapper from '@/app/ui/dashboard/cards';
-import RevenueChart from '@/app/ui/dashboard/revenue-chart';
-import LatestInvoices from '@/app/ui/dashboard/latest-invoices';
-import { Suspense } from 'react';
-import {
-  RevenueChartSkeleton,
-  LatestInvoicesSkeleton,
-  CardsSkeleton,
-} from '@/app/ui/skeletons';
-
+import { config } from "@/app/lib/appConfig";
 export default async function Page() {
   return (
-    <main>
-      <h1 className={`mb-4 text-xl md:text-2xl`}>
-        Dashboard
-      </h1>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <Suspense fallback={<CardsSkeleton />}>
-          <CardWrapper />
-        </Suspense>
+    <div className={`box mt-6 ${!config.USE_SHADOWS ? 'is-shadowless' : ''}`}>
+      <p className="title is-4">Dashboard</p>
+      <div className="grid">
+        <div className="card">
+          <div className="card-content">
+            <div className="content">
+              Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec
+              id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus
+              et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis
+              consectetur purus sit amet fermentum.
+            </div>
+          </div>
+        </div>
+        <div className="card">
+          <div className="card-content">
+            <div className="content">
+              Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec
+              id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus
+              et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis
+              consectetur purus sit amet fermentum.
+            </div>
+          </div>
+        </div>
+        <div className="card">
+          <div className="card-content">
+            <div className="content">
+              Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec
+              id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus
+              et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis
+              consectetur purus sit amet fermentum.
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
-        <Suspense fallback={<RevenueChartSkeleton />}>
-          <RevenueChart />
-        </Suspense>
-        <Suspense fallback={<LatestInvoicesSkeleton />}>
-          <LatestInvoices />
-        </Suspense>
-      </div>
-    </main>
+    </div>
   );
 }

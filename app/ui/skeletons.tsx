@@ -216,7 +216,18 @@ export function InvoicesTableSkeleton() {
     </div>
   );
 }
-
+export function CardTableSkeleton() {
+  return (
+    <div className="box is-hidden-mobile">
+      <h1 className="title is-skeleton">A</h1>
+      <h1 className="title is-skeleton">A</h1>
+      <h1 className="title is-skeleton">A</h1>
+      <h1 className="title is-skeleton">A</h1>
+      <h1 className="title is-skeleton">A</h1>
+      <h1 className="title is-skeleton">A</h1>
+    </div>
+  )
+}
 export function CoursesTableSkeleton() {
   return (
     <div className="mt-6 flow-root">
